@@ -6,9 +6,23 @@
     --darkerred: #770f2b;
     --white: #FFFCF6;
     --black: #1a1a1a;
-    --font-size-p: 25px;
+    --font-size-p: 20px;
     --font-size-h2: 32px;
     --font-size-h3: 20px;
+
+    /* Consistent spacing tokens */
+    --space-xs:  8px;
+    --space-sm:  16px;
+    --space-md:  24px;
+    --space-lg:  40px;
+    --space-xl:  60px;
+    --space-2xl: 100px;
+
+    /* Consistent horizontal padding used by navbar, boxes, footer */
+    --page-pad-x: 50px;
+
+    /* Consistent max-width for all full-width containers */
+    --max-width: 1200px;
 }
 
 body {
@@ -25,13 +39,7 @@ body {
     src: url("../fonts/bosshole.ttf") format("truetype");
 }
 
-@font-face {
-    font-family: "Cute";
-    src: url("../fonts/CuteHandWriting.ttf") format("truetype");
-}
-
-.bosshole-text,
-.cute-text {
+.bosshole-text {
     font-weight: normal;
     line-height: 1.4;
     -webkit-font-smoothing: antialiased;
@@ -39,8 +47,13 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+p {
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
 .bosshole-text { font-family: "Bosshole", cursive; }
-.cute-text     { font-family: "Cute", cursive; }
 
 h2 { font-size: var(--font-size-h2); }
 h3 { font-size: var(--font-size-h3); }
@@ -58,7 +71,7 @@ p  { font-size: var(--font-size-p); }
     top: 0;
     width: 100%;
     margin: 0;
-    padding: 0 40px;
+    padding: 0 var(--page-pad-x); /* was: 0 40px — now matches page */
     box-sizing: border-box;
     z-index: 100;
     border-bottom: 2px solid var(--darkred);
@@ -148,14 +161,17 @@ p  { font-size: var(--font-size-p); }
 ============================================================ */
 #title {
     text-align: center;
-    margin: 20px auto 0;
+    margin: var(--space-lg) auto 0; /* was: 20px — uses spacing token */
     animation: fadeIn 0.8s ease-in 0.1s both;
 }
 
 #title-paper {
     position: relative;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: transform 0.2s ease;
 }
 
@@ -167,22 +183,22 @@ p  { font-size: var(--font-size-p); }
 
 #title-paper h1 {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    font-size: 50px;
+    font-size: clamp(1.1rem, 3.2vw, 2.8rem);
     color: var(--black);
     margin: 0;
-    padding: 0;
+    padding: 0 8%;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 1.25;
     z-index: 1;
 }
 
 #title p {
     text-align: center;
     font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 10rem;
+    margin-top: var(--space-lg);   /* was: 20px */
+    margin-bottom: var(--space-2xl); /* was: 10rem — now aligns with entry spacing */
     color: var(--white);
     animation: slideUp 0.6s ease-out 0.4s both;
 }
@@ -219,16 +235,16 @@ p  { font-size: var(--font-size-p); }
     background-repeat: no-repeat;
     background-image: url("../img/whitepaper.png");
     border-radius: 25px;
-    margin: 30px auto;
-    padding: 60px 50px;
-    max-width: 1200px;
+    margin: var(--space-lg) auto;      /* was: 30px — now matches entry top margin token */
+    padding: var(--space-xl) var(--page-pad-x); /* was: 60px 50px — now uses tokens */
+    max-width: var(--max-width);       /* was: 1200px (unchanged, but now uses token) */
     animation: slideUp 0.6s ease-out 0.2s both;
 }
 
 .intro-content {
     display: flex;
     align-items: flex-start;
-    gap: 40px;
+    gap: var(--space-lg); /* was: 40px */
 }
 
 .intro-text { flex: 1; }
@@ -237,7 +253,7 @@ p  { font-size: var(--font-size-p); }
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: var(--space-sm); /* was: 16px */
     flex-shrink: 0;
 }
 
@@ -272,7 +288,7 @@ p  { font-size: var(--font-size-p); }
 ============================================================ */
 #entry-wrapper {
     background-color: var(--white);
-    padding: 40px 0;
+    padding: var(--space-lg) 0; /* was: 20px 0 — increased to breathe with tape decorations */
 }
 
 .box-entry {
@@ -282,14 +298,14 @@ p  { font-size: var(--font-size-p); }
     background-repeat: no-repeat;
     color: var(--white);
     border-radius: 25px;
-    margin: 100px auto;
-    padding: 60px 50px;
-    max-width: 1400px; /* use this to adjust overall box width */
+    margin: var(--space-2xl) auto;       /* was: 100px — uses token */
+    padding: var(--space-xl) var(--page-pad-x); /* was: 60px 50px — matches box-intro */
+    max-width: var(--max-width);         /* was: 1400px — now matches intro & footer */
 }
 
 .entry-layout {
     display: flex;
-    gap: 40px;
+    gap: var(--space-lg); /* was: 40px */
     align-items: flex-start;
 }
 
@@ -297,15 +313,15 @@ p  { font-size: var(--font-size-p); }
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: var(--space-md); /* was: 30px */
 }
 
 .entry-right {
     flex-shrink: 0;
-    width: 700px; /* use this to adjust overall box width */
+    width: 500px; /* reduced from 700px to fit comfortably inside --max-width */
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--space-md); /* was: 20px */
 }
 
 .entry-text h2,
@@ -325,7 +341,7 @@ p  { font-size: var(--font-size-p); }
     width: 100%;
     overflow: hidden;
     border-radius: 12px;
-    margin-bottom: 20px;
+    margin-bottom: var(--space-md); /* was: 20px */
 }
 
 .carousel-slide {
@@ -347,7 +363,7 @@ p  { font-size: var(--font-size-p); }
     font-size: 0.95rem;
     color: var(--white);
     text-align: center;
-    margin: 10px 0 0 0;
+    margin: var(--space-xs) 0 0 0; /* was: 10px 0 0 0 */
     opacity: 0.9;
 }
 
@@ -372,21 +388,21 @@ p  { font-size: var(--font-size-p); }
     transform: translateY(-50%) scale(1.1);
 }
 
-.prev-btn { left: 8px; }
-.next-btn { right: 8px; }
+.prev-btn { left: var(--space-xs); }  /* was: 8px */
+.next-btn { right: var(--space-xs); } /* was: 8px */
 
 /* ============================================================
    FINDS GALLERY
 ============================================================ */
 .entry-finds h6 {
     font-size: 1.1rem;
-    margin: 0 0 16px 0;
+    margin: 0 0 var(--space-sm) 0; /* was: 0 0 16px 0 */
     color: var(--white);
 }
 
 .finds-gallery {
     display: flex;
-    gap: 16px;
+    gap: var(--space-sm); /* was: 16px */
 }
 
 .finds-gallery figure {
@@ -405,7 +421,7 @@ p  { font-size: var(--font-size-p); }
 
 .finds-gallery figcaption {
     font-size: 0.75rem;
-    margin-top: 8px;
+    margin-top: var(--space-xs); /* was: 8px */
     color: var(--white);
 }
 
@@ -414,18 +430,18 @@ p  { font-size: var(--font-size-p); }
 ============================================================ */
 .pros-cons-inner {
     background-color: var(--white);
-    border: 1px solid var(--black);
+    border: 2px solid var(--darkerred);
     border-radius: 12px;
-    padding: 24px;
+    padding: var(--space-md); /* was: 24px */
     display: flex;
-    gap: 20px;
+    gap: var(--space-md); /* was: 20px */
 }
 
 .pros h4,
 .cons h4 {
     color: var(--black);
     font-size: 1.3rem;
-    margin: 0 0 12px 0;
+    margin: 0 0 var(--space-xs) 0; /* was: 0 0 12px 0 */
     text-decoration: underline;
 }
 
@@ -433,7 +449,7 @@ p  { font-size: var(--font-size-p); }
 .cons ul {
     color: var(--black);
     font-size: var(--font-size-p);
-    padding-left: 16px;
+    padding-left: var(--space-sm); /* was: 16px */
     margin: 0;
     line-height: 1.8;
 }
@@ -444,8 +460,8 @@ p  { font-size: var(--font-size-p); }
 #jumplink {
     display: flex;
     justify-content: center;
-    gap: 24px;
-    margin: 24px 0;
+    gap: var(--space-md); /* was: 24px */
+    margin: var(--space-md) 0; /* was: 24px 0 */
 }
 
 #jumplink a {
@@ -471,21 +487,21 @@ p  { font-size: var(--font-size-p); }
 ============================================================ */
 #footer {
     background-color: var(--darkred);
-    margin-top: 20px;
-    padding: 30px 40px;
+    margin-top: var(--space-lg); /* was: 20px */
+    padding: var(--space-md) var(--page-pad-x); /* was: 30px 40px — now matches page-pad-x */
 }
 
 #footer-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: var(--max-width); /* was: 1200px — now uses token, matches intro */
     margin: 0 auto;
 }
 
 #footer-links {
     display: flex;
-    gap: 30px;
+    gap: var(--space-md); /* was: 30px */
 }
 
 #footer-links a {

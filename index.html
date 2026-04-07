@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <title>Before You Add to Cart: 3 Better Ways to Shop Secondhand</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
 </head>
 <body>
+    
     <!-- Navigation bar -->
     <nav id="navbar">
         <a class="navbar-title bosshole-text" href="#">Shop Second-Hand</a>
@@ -37,7 +42,7 @@
         <div class="intro-content">
             <div class="intro-text">
                 <h2 class="bosshole-text">Welcome to my Blog!</h2>
-                <p class="cute-text"><b>Welcome to my blog about secondhand shopping — your guide to ditching the SHEIN haul and the endless Amazon scroll.
+                <p >Welcome to my blog about secondhand shopping — your guide to ditching the SHEIN haul and the endless Amazon scroll.
                     Here I cover three secondhand shopping methods: online resale marketplaces, thrift stores, and estate sales/garage sales. If you've landed
                     on this page, chances are you're trying to save money, be more environmentally friendly, or maybe you're just on the hunt for unique,
                     one-of-a-kind pieces you won't see on everyone else. Either way, you're in the right place! <br><br>
@@ -45,7 +50,7 @@
                     out there that won't cost you much more and in a lot of cases, will cost you even less. This blog is here to show you where to look before
                     you default to those sites. <br><br>
                     For each method, I'll be breaking things down using the same criteria: budget friendliness, environmental & ethical impact, and what I'm calling the "hunt factor" which is
-                    basically how much time and effort it actually takes to find what you need. I'll also be diving into what makes each method unique and worth trying in its own way.</b></p>
+                    basically how much time and effort it actually takes to find what you need. I'll also be diving into what makes each method unique and worth trying in its own way.</p>
             </div>
             <div class="intro-side">
                 <img src="img/intro-img.png" alt="Geneva Tovar">
@@ -66,7 +71,7 @@
                     <div class="entry-text">
                         <h2 class="bosshole-text">Online Resale Marketplaces</h2>
                         <h3 class="bosshole-text"><i>Finding Exactly What You Need</i></h3>
-                        <p class="cute-text"><b>Online resale marketplaces are your best bet if you're looking for something specific and the best part is you can do it all without putting
+                        <p>Online resale marketplaces are your best bet if you're looking for something specific and the best part is you can do it all without putting
                             another dollar into fast fashion. <br><br>
                             Facebook Marketplace is perfect if you want something fast and local. You can find items just a few miles away, and one of my favorite things about
                             it is the ability to send a lower offer to the seller. Since most people on Marketplace are just trying to clear out their space for a little extra
@@ -75,7 +80,7 @@
                             Depop is similar, but think of it more as an online clothing boutique than a local pickup situation. What makes Depop stand out is a feature that flips the script a little.
                             Instead of you sending a lowball offer to the seller (which, fair warning, can rub people the wrong way on platforms like Marketplace when an item is already marked down),
                             the seller can send a reduced offer directly to you if you've liked their item. So you just like what you want and wait. The downside is that shipping can add up and make
-                            an item pricier than expected, and you won't get it nearly as fast as a local Marketplace pickup, but if you're hunting for a specific clothing item and don't mind waiting, Depop is hard to beat.</b>
+                            an item pricier than expected, and you won't get it nearly as fast as a local Marketplace pickup, but if you're hunting for a specific clothing item and don't mind waiting, Depop is hard to beat.
                         </p>
                     </div>
                     <div class="entry-finds">
@@ -97,7 +102,7 @@
                     </div>
                 </div>
                 <div class="entry-right">
-                    <div class="entry-main-img">
+                    <div class="entry-main-img">  <!-- FIXED: this div now properly closes before pros-cons -->
                         <button class="carousel-btn prev-btn" onclick="changeSlide(this, -1)">&#8592;</button>
                         <div class="carousel-slides">
                             <div class="carousel-slide active">
@@ -114,10 +119,11 @@
                             </div>
                         </div>
                         <button class="carousel-btn next-btn" onclick="changeSlide(this, 1)">&#8594;</button>
+                    </div>  <!-- FIXED: closing tag for .entry-main-img was missing here -->
                     <div class="pros-cons-inner">
                         <div class="pros">
                             <h4 class="bosshole-text">PROS</h4>
-                            <ul class="cute-text">
+                            <ul >
                                 <li>Search for exactly what you need</li>
                                 <li>Easy price comparisons across sellers</li>
                                 <li>Local pickups mean no shipping costs</li>
@@ -126,7 +132,7 @@
                         </div>
                         <div class="cons">
                             <h4 class="bosshole-text">CONS</h4>
-                            <ul class="cute-text">
+                            <ul >
                                 <li>Shipping fees can add up quickly</li>
                                 <li>Scams are a real risk</li>
                                 <li>Easy to fall into mindless scrolling</li>
@@ -146,7 +152,7 @@
                     <div class="entry-text">
                         <h2 class="bosshole-text">Thrift Stores</h2>
                         <h3 class="bosshole-text"><i>The Classic Secondhand Experience</i></h3>
-                        <p class="cute-text"><b>Thrift stores are the classic secondhand option and for good reason. They're great for stumbling upon basic everyday items like kitchenware and cameras,
+                        <p >Thrift stores are the classic secondhand option and for good reason. They're great for stumbling upon basic everyday items like kitchenware and cameras,
                             but honestly some of the best clothing finds happen here too. The catch is that unlike online resale platforms, you're not guaranteed to find exactly what
                             you need. It's more of a "you get what you get" situation, which is either exciting or frustrating depending on the day.<br><br>
                             That said, my personal favorite is the Goodwill Bins and if you haven't been, let me explain. Everything is priced by the pound,
@@ -154,7 +160,7 @@
                             of what you'd pay anywhere else. It takes patience, but the deals are AMAZING. <br><br>
                             One thing I do want to clarify though, thrift stores are not the same as those "vintage" boutique shops you'll see popping up everywhere.
                             Those stores typically source items that were originally thrifted and resell them for 2x the price or more. Cute aesthetic, but that kind of defeats the purpose
-                            if saving money and shopping ethically is your goal.</b>
+                            if saving money and shopping ethically is your goal.
                         </p>
                     </div>
                     <div class="entry-finds">
@@ -197,7 +203,7 @@
                     <div class="pros-cons-inner">
                         <div class="pros">
                             <h4 class="bosshole-text">PROS</h4>
-                            <ul class="cute-text">
+                            <ul >
                                 <li>Very budget friendly</li>
                                 <li>Great for unique one-of-a-kind finds</li>
                                 <li>Supports charitable organizations</li>
@@ -205,7 +211,7 @@
                         </div>
                         <div class="cons">
                             <h4 class="bosshole-text">CONS</h4>
-                            <ul class="cute-text">
+                            <ul >
                                 <li>No guarantee you'll find what you need</li>
                                 <li>Requires time and patience</li>
                                 <li>Inventory changes constantly</li>
@@ -225,14 +231,14 @@
                     <div class="entry-text">
                         <h2 class="bosshole-text">Garage Sales & Estate Sales</h2>
                         <h3 class="bosshole-text"><i>The Treasurehunt Experience</i></h3>
-                        <p class="cute-text"><b>Honestly, estate sales and garage sales might be the most slept-on option on this list. A lot of people don't even know what an estate sale
+                        <p >Honestly, estate sales and garage sales might be the most slept-on option on this list. A lot of people don't even know what an estate sale
                             is. Basically, it's when the contents of an entire home are sold, usually all at once, which means you can find everything from furniture to clothing to vintage
                             cameras. Many estate sales are listed online ahead of time with photos of the items, so you can actually browse before you show up. Websites like EstateSales.net
                             are great for finding ones near you, or honestly just keeping an eye out for handwritten signs on street corners works too. <br><br>
                             What makes this option special beyond the prices is the experience itself. You get real face-to-face interaction with the people running the sale, and in my
                             experience they are some of the friendliest people you'll meet. It feels less like shopping and more like an adventure. <br><br>
                             Like thrifting, this one is hard to rely on if you need something specific — you're very much at the mercy of what's available that day. But when it works out,
-                            it really works out. I went to an estate sale once specifically looking for a camera and walked out with one for $5. Five dollars. I'm still not over it, it honestly felt like I manifested it.</b>
+                            it really works out. I went to an estate sale once specifically looking for a camera and walked out with one for $5. Five dollars. I'm still not over it, it honestly felt like I manifested it.
                         </p>
                     </div>
                     <div class="entry-finds">
@@ -271,7 +277,7 @@
                     <div class="pros-cons-inner">
                         <div class="pros">
                             <h4 class="bosshole-text">PROS</h4>
-                            <ul class="cute-text">
+                            <ul >
                                 <li>Extremely low prices</li>
                                 <li>Fun, social experience</li>
                                 <li>Unique vintage finds</li>
@@ -279,7 +285,7 @@
                         </div>
                         <div class="cons">
                             <h4 class="bosshole-text">CONS</h4>
-                            <ul class="cute-text">
+                            <ul >
                                 <li>Weekend only, weather dependent</li>
                                 <li>Hard to find something specific</li>
                                 <li>Requires traveling around</li>
@@ -305,6 +311,7 @@
         </div>
     </footer>
 
+    <!-- Carousel -->
     <script>
     function changeSlide(btn, direction) {
         const carousel = btn.closest('.entry-main-img');

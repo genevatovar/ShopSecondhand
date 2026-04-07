@@ -6,7 +6,7 @@
     --darkerred: #770f2b;
     --white: #FFFCF6;
     --black: #1a1a1a;
-    --font-size-p: 18px;
+    --font-size-p: 20px;
     --font-size-h2: 32px;
     --font-size-h3: 20px;
 }
@@ -29,13 +29,7 @@ body {
     src: url("../../fonts/bosshole.ttf") format("truetype");
 }
 
-@font-face {
-    font-family: "Cute";
-    src: url("../../fonts/CuteHandWriting.ttf") format("truetype");
-}
-
-.bosshole-text,
-.cute-text {
+.bosshole-text {
     font-weight: normal;
     line-height: 1.4;
     -webkit-font-smoothing: antialiased;
@@ -44,7 +38,12 @@ body {
 }
 
 .bosshole-text { font-family: "Bosshole", cursive; }
-.cute-text     { font-family: "Cute", cursive; }
+
+p {
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 100;
+  font-style: normal;
+}
 
 h2 { font-size: var(--font-size-h2); }
 h3 { font-size: var(--font-size-h3); }
@@ -187,6 +186,7 @@ p  { font-size: var(--font-size-p); }
 
 #hero-text p {
     font-size: 2.2rem;
+    /* font-weight: bold; */
     line-height: 1.6;
     margin: 0;
 }

@@ -78,6 +78,18 @@ p  { font-size: var(--font-size-p); }
     display: inline-block;
 }
 
+#navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#navbar-brand .gif img {
+    height: 72px;
+    width: auto;
+    display: block;
+}
+
 .navbar-title:hover {
     color: var(--darkerred);
     transform: scale(1.05);
@@ -152,11 +164,10 @@ p  { font-size: var(--font-size-p); }
 #hero {
     width: 100%;
     height: 520px;
-    background-image: url("../img/bigsur.jpg");
+    background-color: var(--darkred);
     background-size: cover;
     background-position: center;
     position: relative;
-    border-bottom: 3px solid var(--black);
     animation: fadeIn 0.8s ease-in both;
 }
 
@@ -186,16 +197,51 @@ p  { font-size: var(--font-size-p); }
 
 #hero-text p {
     font-size: 2.2rem;
-    /* font-weight: bold; */
     line-height: 1.6;
     margin: 0;
 }
 
 /* ============================================================
+   SCATTERED COLLAGE
+============================================================ */
+#hero {
+    position: relative;
+    overflow: visible; 
+}
+
+#scattered-collage {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Make sure hero content sits above the scattered images */
+#hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.collage-img {
+    position: absolute;
+    width: 220px;
+    height: auto;
+    /* box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.35); */
+    object-fit: cover;
+}
+
+/* 6 images evenly spread across the viewport in a 3x2 grid pattern */
+#c1 { top: 8%;   left: 2%;   rotate: -6deg;  }
+#c2 { top: 8%;   left: 38%;  rotate:  4deg;  }
+#c3 { top: 8%;   right: 2%;  rotate:  7deg;  }
+#c4 { bottom: 8%; left: 2%;  rotate:  5deg;  }
+#c5 { bottom: 8%; left: 38%; rotate: -8deg;  }
+#c6 { bottom: 8%; right: 2%; rotate: -5deg;  }
+
+/* ============================================================
    ABOUT SECTION
 ============================================================ */
 #about {
-    background-image: url("../img/whitepaper.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     border-radius: 25px;

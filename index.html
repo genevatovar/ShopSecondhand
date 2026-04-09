@@ -7,16 +7,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
 </head>
 <body>
     
     <!-- Navigation bar -->
     <nav id="navbar">
-        <a class="navbar-title bosshole-text" href="#">Shop Second-Hand</a>
-        <a href="#" class="gif" aria-label="Shop Second-Hand">
-            <img src="img/cartred.gif" alt="Animated logo" aria-hidden="true">
-        </a>
+        <div id="navbar-brand">
+            <a class="navbar-title bosshole-text" href="#">Shop Second-Hand</a>
+            <a href="#" class="gif" aria-label="Shop Second-Hand">
+                <img src="img/cartred.gif" alt="Animated logo" aria-hidden="true">
+            </a>
+        </div>
         <ul>
             <li><a class="bosshole-text" href="about/about.html" aria-label="Learn More About Me">Meet the Creator</a></li>
             <li class="dropdown">
@@ -36,7 +37,6 @@
             <img src="img/titlepaper.png" alt="" id="title-paper-img">
             <h1 class="bosshole-text">Before You Add to Cart: <br>3 Better Ways to Shop Secondhand</h1>
         </div>
-        <p class="bosshole-text">Your personal guide to ditching Shein.</p>
     </section>
 
     <!-- Introduction Box -->
@@ -44,7 +44,7 @@
         <img src="img/tape.svg" class="entry-tape" alt="">
         <div class="intro-content">
             <div class="intro-text">
-                <h2 class="bosshole-text">Welcome to my Blog!</h2>
+                <h2 class="bosshole-text">Your personal guide to ditching Shein.</h2>
                 <p >Welcome to my blog about secondhand shopping — your guide to ditching the SHEIN haul and the endless Amazon scroll.
                     Here I cover three secondhand shopping methods: online resale marketplaces, thrift stores, and estate sales/garage sales. If you've landed
                     on this page, chances are you're trying to save money, be more environmentally friendly, or maybe you're just on the hunt for unique,
@@ -327,7 +327,15 @@
         let next = (current + direction + slides.length) % slides.length;
         slides[next].classList.add('active');
     }
+    // Back to top visibility
+    window.addEventListener('scroll', () => {
+        const btn = document.getElementById('back-to-top');
+        btn.classList.toggle('visible', window.scrollY > 300);
+    });
     </script>
+
+    <!-- Back to Top Button -->
+    <a href="#" id="back-to-top" aria-label="Back to top" class="bosshole-text">↑ Top</a>
 
 </body>
 </html>

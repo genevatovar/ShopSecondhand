@@ -6,7 +6,7 @@
     --darkerred: #770f2b;
     --white: #FFFCF6;
     --black: #1a1a1a;
-    --font-size-p: 15px;
+    --font-size-p: 20px;
     --font-size-h2: 32px;
     --font-size-h3: 20px;
 
@@ -100,7 +100,7 @@ p  { font-size: var(--font-size-p); }
 }
 
 #navbar-brand .gif img {
-    height: 72px;
+    height: 80px;
     width: auto;
     display: block;
 }
@@ -316,24 +316,25 @@ p  { font-size: var(--font-size-p); }
 }
 
 .entry-layout {
-    display: flex;
-    gap: var(--space-lg); /* was: 40px */
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 560px;  /* left grows, right is fixed-width */
+    gap: var(--space-lg);
+    align-items: start;
 }
-
+ 
+/* --- LEFT COLUMN: stack text then gallery --- */
 .entry-left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md); /* was: 30px */
+    display: grid;
+    grid-template-rows: auto auto;     /* text row, then gallery row */
+    gap: var(--space-md);
 }
-
+ 
+/* --- RIGHT COLUMN: stack carousel then pros/cons --- */
 .entry-right {
-    flex-shrink: 0;
-    width: 500px; /* reduced from 700px to fit comfortably inside --max-width */
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md); /* was: 20px */
+    display: grid;
+    grid-template-rows: auto auto;     /* carousel row, then pros/cons row */
+    gap: var(--space-md);
+    width: 100%;                       /* let grid control the width, not flex */
 }
 
 .entry-text h2,
@@ -353,6 +354,7 @@ p  { font-size: var(--font-size-p); }
     width: 100%;
     overflow: hidden;
     border-radius: 12px;
+    margin-top: var(--space-lg);
     margin-bottom: var(--space-md); /* was: 20px */
 }
 
@@ -413,20 +415,20 @@ p  { font-size: var(--font-size-p); }
 }
 
 .finds-gallery {
-    display: flex;
-    gap: var(--space-sm); /* was: 16px */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
 }
-
+ 
 .finds-gallery figure {
     margin: 0;
-    flex: 1;
     text-align: center;
 }
-
+ 
 .finds-gallery figure img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    aspect-ratio: 1 / 1;              /* square crop like the screenshot */
+    object-fit: cover;
     border-radius: 8px;
     transition: transform 0.2s ease;
 }
@@ -441,12 +443,13 @@ p  { font-size: var(--font-size-p); }
    PROS & CONS
 ============================================================ */
 .pros-cons-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* pros left, cons right */
+    gap: var(--space-md);
     background-image: url("../img/whitepaper.png");
     border: 2px solid var(--darkerred);
     border-radius: 12px;
-    padding: var(--space-md); /* was: 24px */
-    display: flex;
-    gap: var(--space-md); /* was: 20px */
+    padding: var(--space-md);
 }
 
 .pros h4,
@@ -460,7 +463,7 @@ p  { font-size: var(--font-size-p); }
 .pros ul,
 .cons ul {
     color: var(--black);
-    font-size: var(--font-size-p);
+    font-size: 23px;
     padding-left: var(--space-sm); /* was: 16px */
     margin: 0;
     line-height: 1.8;

@@ -7,8 +7,9 @@
     --white: #FFFCF6;
     --black: #1a1a1a;
     --font-size-p: 20px;
-    --font-size-h2: 32px;
-    --font-size-h3: 20px;
+    --font-size-h1: 50px;
+    --font-size-h2: 40px;
+    --font-size-h3: 32px;
 }
 
 * {
@@ -45,6 +46,7 @@ p {
   font-style: normal;
 }
 
+h1 { font-size: var(--font-size-h1); }
 h2 { font-size: var(--font-size-h2); }
 h3 { font-size: var(--font-size-h3); }
 p  { font-size: var(--font-size-p); }
@@ -165,9 +167,13 @@ p  { font-size: var(--font-size-p); }
     width: 100%;
     height: 520px;
     background-color: var(--darkred);
-    background-size: cover;
-    background-position: center;
     position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0;
     animation: fadeIn 0.8s ease-in both;
 }
 
@@ -188,6 +194,16 @@ p  { font-size: var(--font-size-p); }
     width: 350px;
     object-fit: contain;
     filter: drop-shadow(2px 4px 8px rgba(0,0,0,0.4));
+}
+
+#hero-top-text,
+#hero-bottom-text {
+    color: var(--white);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    position: relative;
+    z-index: 2;        /* bump above collage images */
+    padding: 0 20px;
 }
 
 #hero-text {
@@ -224,19 +240,21 @@ p  { font-size: var(--font-size-p); }
 
 .collage-img {
     position: absolute;
-    width: 220px;
+    width: 300px;
     height: auto;
-    /* box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.35); */
     object-fit: cover;
 }
 
 /* 6 images evenly spread across the viewport in a 3x2 grid pattern */
-#c1 { top: 8%;   left: 2%;   rotate: -6deg;  }
-#c2 { top: 8%;   left: 38%;  rotate:  4deg;  }
-#c3 { top: 8%;   right: 2%;  rotate:  7deg;  }
-#c4 { bottom: 8%; left: 2%;  rotate:  5deg;  }
-#c5 { bottom: 8%; left: 38%; rotate: -8deg;  }
-#c6 { bottom: 8%; right: 2%; rotate: -5deg;  }
+#c1 { top: 2%;  left: 2%;   rotate: -6deg; } /* heart img */
+#c2 { top: 0%;  right: 8%;  rotate:  4deg; } /* church img */
+#c3 { top: 20%;  right: 43%; rotate:  7deg; } /* selfie img */
+#c4 { bottom: 0%; left: 15%;  rotate:  5deg;  } /* friends img */
+#c5 { bottom: 8%; left: 63%; rotate: -8deg;  } /* bridge img */
+#c6 { bottom: 0%; right: 0%; rotate: -5deg;  } /* haha img */
+#c7 { top: 2%;  left: 18%;   rotate: -6deg; } /* ball img */
+
+
 
 /* ============================================================
    ABOUT SECTION
@@ -262,26 +280,26 @@ p  { font-size: var(--font-size-p); }
 }
 
 #about-text h2 {
-    font-size: var(--font-size-h2);
+    /* font-size: var(--font-size-h2); */
     margin-bottom: 8px;
     color: var(--black);
 }
 
 #about-text h3 {
-    font-size: var(--font-size-h3);
+    /* font-size: var(--font-size-h3); */
     margin-bottom: 24px;
     color: var(--black);
 }
 
 #about-text p {
-    font-size: var(--font-size-p);
+    /* font-size: var(--font-size-p); */
     line-height: 1.7;
     color: var(--black);
 }
 
 #about-img {
     flex-shrink: 0;
-    width: 320px;
+    width: 400px;
 }
 
 #about-img img {

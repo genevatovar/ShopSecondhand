@@ -59,6 +59,11 @@ h2 { font-size: var(--font-size-h2); }
 h3 { font-size: var(--font-size-h3); }
 p  { font-size: var(--font-size-p); }
 
+#intro-wrapper {
+    background-color: var(--darkred);
+    padding: 85px;
+}
+
 /* ============================================================
    NAVIGATION BAR
 ============================================================ */

@@ -22,6 +22,11 @@ body {
     padding: 0;
 }
 
+#intro-wrapper {
+    background-color: var(--darkred);
+    padding: 85px;
+}
+
 /* ============================================================
    FONTS
 ============================================================ */
@@ -307,6 +312,11 @@ p  { font-size: var(--font-size-p); }
     height: auto;
     object-fit: cover;
     border-radius: 12px;
+}
+
+#about-wrapper {
+    background-color: var(--white);
+    padding: 20px; /* was: 20px 0 — increased to breathe with tape decorations */
 }
 
 /* ============================================================

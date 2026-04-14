@@ -178,7 +178,7 @@ p  { font-size: var(--font-size-p); }
 ============================================================ */
 #title {
     text-align: center;
-    margin: var(--space-lg) auto 0; /* was: 20px — uses spacing token */
+    margin: var(--space-lg) auto 0; 
     animation: fadeIn 0.8s ease-in 0.1s both;
 }
 

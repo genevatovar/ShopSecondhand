@@ -10,6 +10,9 @@
     --font-size-h1: 50px;
     --font-size-h2: 40px;
     --font-size-h3: 32px;
+
+     /* Consistent horizontal padding used by navbar, boxes, footer */
+    --page-pad-x: 50px;
 }
 
 * {
@@ -68,7 +71,7 @@ p  { font-size: var(--font-size-p); }
     top: 0;
     width: 100%;
     margin: 0;
-    padding: 0 40px;
+    padding: 0 var(--page-pad-x); 
     box-sizing: border-box;
     z-index: 100;
     border-bottom: 2px solid var(--darkred);
@@ -85,11 +88,11 @@ p  { font-size: var(--font-size-p); }
     height: 100px;
     width: auto;
     display: block;
+    transition: filter 0.2s ease;
 }
 
-.navbar-title:hover {
-    color: var(--darkerred);
-    transform: scale(1.05);
+#navbar-brand .gif img:hover {
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.3));
 }
 
 #navbar > ul {
